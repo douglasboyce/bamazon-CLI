@@ -29,26 +29,27 @@ function displayProducts() {
   connection.query(queryStr, function (err, data) {
     if (err) throw err;
 
-    console.log('Existing Inventory: ');
-    console.log('...................\n');
+    console.log('Existing Inventory:');
+    console.log('........-------...........\n');
+
 
     var strOut = '';
     for (var i = 0; i < data.length; i++) {
       strOut = '';
-      strOut += 'Item ID: ' + data[i].item_id + '  ||  ';
-      strOut += 'Product Name: ' + data[i].product_name + '  ||  ';
-      strOut += 'Department: ' + data[i].department_name + '  ||  ';
-      strOut += 'Price: $' + data[i].price + '\n';
-      strOut += 'Stock Quantity' + data[i].stock_quantity + '\n';
+      strOut += 'Item ID: ' + data[i].item_id + ' | ';
+      strOut += 'Product Name: ' + data[i].product_name + ' | ';
+      strOut += 'Department: ' + data[i].department_name + ' | ';
+      strOut += 'Price: $' + data[i].price + ' | ';;
+      strOut += 'Stock Quantity : ' + data[i].stock_quantity + '\n';
 
       console.log(strOut);
     }
 
-    console.log("---------------------------------------------------------------------\n");
+    console.log("---------------------------------------------------------------------\n\n");
 
     //Prompt the user for item/quantity they would like to purchase
 
-  userInput();
+    userInput();
   })
 
 }
@@ -69,26 +70,26 @@ function userInput() {
   inquirer.prompt([
 
     {
-      type: 'input',
-      name: 'item_id',
-      message: 'Please enter the Item ID which you would like to purchase.',
-      validate: validateInput,
-      filter: Number
+      name: "choice",
+      type: "list",
+      choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      message: "What item would you like to purchase?"
     },
+
 
     {
       type: 'input',
       name: 'quantity',
-      message: 'How many do you need?',
+      message: 'What quantity do you need?',
       validate: validateInput,
       filter: Number
     }
 
 
   ]).then(function (input) {
-    console.log('Customer has selected: \n    item_id = ' + input.item_id + '\n    quantity = ' + input.quantity);
+    // console.log('Customer has selected: \n    item_id = ' + input.item_id + '\n    quantity = ' + input.quantity);
 
-    let item = input.item_id;
+    let item = input.choice;
     let quantity = input.quantity;
 
     //Query db to confirm that the given item ID exists in the desired quantity
@@ -106,7 +107,7 @@ function userInput() {
       // console.log('productData.price =  ' + productData.price);
       if (productData.stock_quantity < quantity) {
         console.log('Sorry, there is not enough product in stock, your order can not be placed as is.');
-        console.log('Please modify your order.');
+        console.log('Please modify your order.\n');
         displayProducts();
 
       } else {
@@ -117,33 +118,34 @@ function userInput() {
         // Update the inventory
         connection.query(updateQueryStr, function (err, data) {
           if (err) throw err;
-
-          console.log('Your oder has been placed! Your total is $' + productData.price * quantity);
+          console.log("\n\n---------------------------------------------------------------------");
+          console.log('Your order has been placed! Your total is $' + productData.price * quantity);
+          console.log('Thank you for your order!');
           console.log('---------------------------\n');
           purchaseAgain();
-        })   
+        })
       }
     });
   })
 }
 
-  function purchaseAgain() {
-    inquirer.prompt([
+function purchaseAgain() {
+  inquirer.prompt([
 
-      {
-        name: "yesOrno",
-        type: "rawlist",
-        message: "Would you like to purchase another item (yes or no)?",
-        choices: ["yes", "no"]
-      }
-    ]).then(function (answer) {
-      // based on their answer, either call the bid or the post functions
-      if (answer.yesOrno.toUpperCase() === "NO") {
-        console.log(", exiting the bamazon customer app");
-        console.log('\ngoodbye!')
-        connection.end();
-      } else {
-        displayProducts();
-      }
-    })
-  }
+    {
+      name: "yesOrno",
+      type: "list",
+      message: "Would you like to purchase another item (yes or no)?",
+      choices: ["yes", "no"]
+    }
+  ]).then(function (answer) {
+    // based on their answer, either call the bid or the post functions
+    if (answer.yesOrno.toUpperCase() === "NO") {
+      console.log("Exiting the bamazon customer app");
+      console.log('\ngoodbye!')
+      connection.end();
+    } else {
+      displayProducts();
+    }
+  })
+}
