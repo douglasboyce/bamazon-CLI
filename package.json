@@ -2,7 +2,13 @@
   "name": "bamazon-CLI",
   "version": "1.0.0",
   "description": "bamazon CLI",
-  "main": "index.js",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^6.2.0",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,11 +22,5 @@
   "bugs": {
     "url": "https://github.com/douglasboyce/bamazon-CLI/issues"
   },
-  "homepage": "https://github.com/douglasboyce/bamazon-CLI#readme",
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "inquirer": "^6.2.0",
-    "mysql": "^2.16.0",
-    "request": "^2.88.0"
-  }
+  "homepage": "https://github.com/douglasboyce/bamazon-CLI#readme"
 }
