@@ -24,11 +24,11 @@ Since users cannot access MySQL database from GitHub examples of how the applica
 ---
 ### This is an image of the table that includes all of the items located in the MySQL database seen in the bamazonCustomer.js file.
 
-![Image](images/image-2.png)
+![Image](images/image-2.PNG)
 ---
 ### At the bottom you can see the user inputs for what item they want to select seen in the bamazonCustomer.js file.
 
-![Image](images/image-3.png)
+![Image](images/image-3.PNG)
 ---
 ### At the top you can see how many items were selected and the cost of the amount of items if that item is avalaible. At the bottom you can see how many are avaliable in the inventory at this time seen in the bamazonCustomer.js file.
 
