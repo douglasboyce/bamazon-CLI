@@ -18,6 +18,7 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
+  console.log("I am here");
   displayProducts();
 });
 
@@ -53,6 +54,7 @@ function displayProducts() {
   })
 
 }
+
 
 // validateInput makes sure that the user is supplying only positive integers for their inputs
 function validateInput(value) {
