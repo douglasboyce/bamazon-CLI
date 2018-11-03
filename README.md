@@ -29,9 +29,6 @@ Since users cannot access MySQL database from GitHub examples of how the applica
 <<<<<<< HEAD
 ![Image](images/image-1.png)
 
-=======
-![Image](images/image-2.png)
->>>>>>> 73b49073f96ebee5cb8df7e5ef4e40d94228f166
 ---
 ### At the bottom you can see the user inputs for what item they want to select and the quantity of that item as seen in the bamazonCustomer.js file.
 
