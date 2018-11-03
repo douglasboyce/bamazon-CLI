@@ -3,14 +3,16 @@
 
 # App Description:
 
-Created a backend application using node.js, javascript, and mySQL that stores and can create items for shopers. 
+Created a backend application using node.js, javascript, and mySQL that stores and can create items for shoppers. 
 
-Individuals can also purchase items using this application from the database. 
+Individuals can also purchase items using this application from the database (mySQL). 
 
 # Instructions:
 
-* Open the bamazonCustomer.js terminal by typing "node bamazonCustomer.js" this will then display the database of items for sale. Then the user can choose what item they want to purchase by selecting item id. After that the user can select how many, and see if the item is in stock. If so they can purchase and see the total amount spent on the amount of items purchased. 
-![Image](images/image-1.png)
+* Begin, by cloning this respository. Then copy the items listed in the schema.sql and paste them into the MySQL workbench to establish the database bamazon and the populate the database. 
+
+* Next open the terminal or bash terminal. Then type establish the bamazonCustomer.js terminal by typing "node bamazonCustomer.js",  this will then display all items for sale. Then the user can choose what item they want to purchase by selecting item id for a list. After that the user can select how many they want to purchse. If an items is not in stock, a message will display and the customer can select another item from the list.
+
 
 # Technologies Used: 
 	*  Node.js
@@ -24,13 +26,23 @@ Since users cannot access MySQL database from GitHub examples of how the applica
 ---
 ### This is an image of the table that includes all of the items located in the MySQL database seen in the bamazonCustomer.js file.
 
+<<<<<<< HEAD
+![Image](images/image-1.png)
+
+=======
 ![Image](images/image-2.png)
+>>>>>>> 73b49073f96ebee5cb8df7e5ef4e40d94228f166
 ---
-### At the bottom you can see the user inputs for what item they want to select seen in the bamazonCustomer.js file.
+### At the bottom you can see the user inputs for what item they want to select and the quantity of that item as seen in the bamazonCustomer.js file.
+
+![Image](images/image-2.png)
+
+---
+### Now you can see how many items were selected and the total cost of the amount of item. 
 
 ![Image](images/image-3.png)
+
 ---
-### At the top you can see how many items were selected and the cost of the amount of items if that item is avalaible. At the bottom you can see how many are avaliable in the inventory at this time seen in the bamazonCustomer.js file.
+### The user if offered the option to select another item or exit the appllication.
 
 ![Image](images/image-4.png)
----
