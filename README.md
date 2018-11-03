@@ -26,7 +26,6 @@ Since users cannot access MySQL database from GitHub examples of how the applica
 ---
 ### This is an image of the table that includes all of the items located in the MySQL database seen in the bamazonCustomer.js file.
 
-<<<<<<< HEAD
 ![Image](images/image-1.png)
 
 ---
