@@ -9,7 +9,7 @@ Individuals can also purchase items using this application from the database (my
 
 # Instructions:
 
-* Begin, by cloning this respository. Then copy the items listed in the schema.sql and paste them into the MySQL workbench to establish the database bamazon and the populate the database. 
+* Begin, by cloning this respository. Then copy the items listed in the schema.sql and paste them into the MySQL workbench to establish the database bamazon and the populate the database. Be sure you change the password in the server.js file to the one you use with your mySQL. 
 
 * Next open the terminal or bash terminal. Then type establish the bamazonCustomer.js terminal by typing "node bamazonCustomer.js",  this will then display all items for sale. Then the user can choose what item they want to purchase by selecting item id for a list. After that the user can select how many they want to purchse. If an items is not in stock, a message will display and the customer can select another item from the list.
 
