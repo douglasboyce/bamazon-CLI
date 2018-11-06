@@ -39,6 +39,6 @@ Since users cannot access MySQL database from GitHub examples of how the applica
 ![Image](images/image-3.png)
 
 ---
-### The user if offered the option to select another item or exit the appllication.
+### The user is offered the option to select another item or exit the appllication.
 
 ![Image](images/image-4.png)
